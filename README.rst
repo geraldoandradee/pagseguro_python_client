@@ -1,6 +1,8 @@
 Pagseguro Python Client
 =======================
 
+.. image:: https://travis-ci.org/geraldoandradee/pagseguro_python_client.svg
+    :target: https://travis-ci.org/geraldoandradee/pagseguro_python_client
 
 
 
