@@ -38,5 +38,22 @@ class ParametersTest(unittest.TestCase):
         except ImportError:
             self.fail("Parameter encoding does not exists")
 
+    def test_content_type_possibilities(self):
+        """
+        https://pagseguro.uol.com.br/v2/guia-de-integracao/api-de-pagamentos.html#!v2-item-api-de-pagamentos-parametros-http
 
+        Codificação de caracteres.
 
+        Especifica a codificação de caracteres usada nos parâmetros enviados.
+
+        Presença: Opcional.
+        Tipo: Texto.
+        Formato: Os valores aceitos são ISO-8859-1 e UTF-8.
+
+        :return:
+        """
+        try:
+            from pagseguro_python_client import ENCODING
+            self.assertTrue(ENCODING == 'ISO-8859-1' or ENCODING == 'UTF-8', msg='Wrong content type value')
+        except ImportError:
+            self.fail("Parameter content_type does not exists")
