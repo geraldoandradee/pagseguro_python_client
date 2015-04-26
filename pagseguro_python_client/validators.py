@@ -31,3 +31,31 @@ class ItemValidator():
             return True
 
         return False
+
+class PagseguroValidator():
+
+    @classmethod
+    def validate(cls, item):
+        pass
+
+    @staticmethod
+    def validate_cpf(self, cpf):
+
+        if (len(cpf) != 11 or not cpf.isdigit()):
+            return False
+
+        digito = {}
+        digito[0] = 0
+        digito[1] = 0
+        a=10
+        total=0
+        for c in range(0,2):
+            for i in range(0,(8+c+1)):
+                total=total+int(cpf[i])*a
+                a=a-1
+            digito[c]=int(11-(total%11))
+            a=11
+        total=0
+
+        if (int(cpf[9]) == int(digito[0]) and int(cpf[10]) == int(digito[1])):
+            return True
