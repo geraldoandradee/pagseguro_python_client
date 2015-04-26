@@ -9,8 +9,21 @@ setup(
     author='Geraldo Andrade',
     author_email='hi@geraldoandrade.com',
     description='Pagseguro V2 python client.',
-    install_requires=[
-          'requests==2.6.2', 'inflection==0.3.0'
-      ],
-    tests_require=['coverage']
+    install_requires= open('requirements.txt').read().split("\n"),
+    tests_require=['coverage'],
+    zip_safe=False,
+    classifiers=[
+    'Development Status :: 3 - Alpha',
+    'Environment :: Web Environment',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 2.6',
+    'Programming Language :: Python :: 2.7',
+    'Programming Language :: Python :: 3.2',
+    'Programming Language :: Python :: 3.3',
+    'Programming Language :: Python :: 3.4',
+    ],
+    keywords='pagseguro, payment, payments, credit-card'
 )
