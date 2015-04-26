@@ -62,6 +62,7 @@ class Item(Base):
                       'shipping_address_street', 'shipping_address_number', 'shipping_address_complement',
                       'shipping_address_district', 'shipping_address_postal_code', 'shipping_address_city',
                       'shipping_address_state', 'shipping_address_country']
+
     def __init__(self, itemId, itemDescription, itemAmount, itemQuantity, itemWeight):
         self.itemId = itemId
         self.itemDescription = itemDescription
@@ -140,3 +141,37 @@ class Pagseguro(object):
     &shippingAddressState=SP\
     &shippingAddressCountry=BRA"
 """
+
+
+class CheckoutResponse(Base):
+    """
+        <?xml version="1.0" encoding="ISO-8859-1"?>
+        <checkout>
+            <code>8CF4BE7DCECEF0F004A6DFA0A8243412</code>
+            <date>2010-12-02T10:11:28.000-02:00</date>
+        </checkout>
+    """
+
+    def __init__(self, code=None, date=None):
+        self.code = code
+        self.date = date
+
+
+class Error(Base):
+    """
+    <?xml version="1.0" encoding="ISO-8859-1"?>
+    <errors>
+        <error>
+            <code>11004</code>
+            <message>Currency is required.</message>
+        </error>
+        <error>
+            <code>11005</code>
+            <message>Currency invalid value: 100</message>
+        </error>
+    </errors>
+    """
+
+    def __init__(self, code=None, message=None):
+        self.code = code
+        self.message = message
