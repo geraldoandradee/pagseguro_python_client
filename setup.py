@@ -19,11 +19,10 @@ setup(
     'Natural Language :: English',
     'License :: OSI Approved :: BSD License',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3.2',
     'Programming Language :: Python :: 3.3',
     'Programming Language :: Python :: 3.4',
     ],
-    keywords='pagseguro, payment, payments, credit-card'
+    keywords='pagseguro, payment, payments, payment-gateway, credit-card'
 )
